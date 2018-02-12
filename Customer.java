@@ -2,9 +2,9 @@
 class Customer{
 
   private String CustomerName;
-  private Integer CustomerMobileNo;
+  private int CustomerMobileNo;
 
-  public Customer(String CustomerName, Integer CustomerMobileNo){
+  public Customer(String CustomerName, int CustomerMobileNo){
 
     this.CustomerName = CustomerName;
     this.CustomerMobileNo = CustomerMobileNo;
@@ -23,13 +23,13 @@ class Customer{
 
   }
 
-  public void setCustomerMobileNo(Integer CustomerMobileNo){
+  public void setCustomerMobileNo(int CustomerMobileNo){
 
     this.CustomerMobileNo = CustomerMobileNo;
     
   }
 
-  public Integer getCustomerMobileNo(){
+  public int getCustomerMobileNo(){
 
     return this.CustomerMobileNo;
     
