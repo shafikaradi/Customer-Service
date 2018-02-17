@@ -2,101 +2,63 @@
 class Array<T>{
 
     private static final int fixedArraySize = 100;
-    private int sharedInstanceIndex = 0;
+    private int instanceIndex = 0;
 
-    private T [] items = new T[fixedArraySize];
+    private Object [] items;
 
-    public Array(T [] items){
-
-        this.items = items;
-
-    }
+    
 
     public Array(){
 
+        items = new Object[fixedArraySize];
+
     }
 
-    //Add items in order
     public void add(T item){
 
-     
-        if(sharedInstanceIndex >= 0 && sharedInstanceIndex < 100){
-            items[sharedInstanceIndex] = item;
-            ++sharedInstanceIndex;
+        if(instanceIndex <= 99){
+
+            items[instanceIndex] = item;
+             ++instanceIndex;
+ 
+         }else{
+ 
+             System.out.println("Out of range");
+ 
+         }
+
+
+    }
+
+   public  void addByIndex(T item, int index){
+
+        if(index <= 99){
+
+            items[index] = item;
+    
         }else{
 
             System.out.println("Out of range");
 
         }
 
-        
+   }
 
-    }
+    public T find(int index){
 
-    //Add an item by specifying an index
-    public void add(T item, int atIndex){
+        if(index < fixedArraySize && index >= 0 ){
 
-
-        if(atIndex < 0 && atIndex > fixedArraySize){
-
-            items[atIndex] = item;
-
-        }else{
-
-            System.out.println("Out of range");
-        }
-        
-        
-
-    }
-
-  //Find an item by its value
-    public void find(Object value){
-
-        for(int i = 0; i < fixedArraySize; i++){
-
-            if(items[i] == null){
-
-                if(sharedInstanceIndex >=0  && sharedInstanceIndex < 100){
-                    continue;
-                }else{
-                    break;
-                }
-               
-
-            }if(items[i].getCustomerMobileNo() == value){
-
-                System.out.print("The Customer "+ items[i].getCustomerName() +" was found");
-                //return new Object();
-            }else{
-
-                System.out.print("Nothing was found");
-                //return new Object();
-            }
+            return (T) items[index];
 
         }
 
+
+        return null;
     }
 
 
-    //Find a Customer by an index
-    public void findCustomerByIndex(Object value, int atIndex){
 
-        
-
-            if(items[atIndex].getCustomerMobileNo() == value){
-
-                System.out.print("The Customer "+ items[atIndex].getCustomerName() +" was found");
-                return;
-            }else{
-
-                System.out.print("Nothing was found");
-                return;
-            }
-
-        
-
-    }
+ 
 
 
 

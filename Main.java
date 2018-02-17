@@ -1,21 +1,19 @@
-
-
-public class Main{
+ class Main{
 
  public static void main(String[] args) {
 
-    Customer [] customers = {new Customer("Shafiq", 916416709),new Customer("Ahmed", 913200296) };
-    //Array cService = new Array<Customer>(customers);
+    //Customer [] customers = {new Customer("Shafiq", 916416709),new Customer("Ahmed", 913200296) };
+    Array<Customer> cService = new Array<>();
     HashTable htService = new HashTable<String,Integer>();
-    // cService.addCustomerToArray(new Customer("Shafiq", 916416709));
-    // cService.addCustomerToArray(new Customer("Ahmed", 913200296));
-    //cService.find(916416709);
-    htService.add("Shafiq", 916416709);
-    htService.add("Ahmed", 913200296);
 
+    cService.add(new Customer("Shafiq", 916416709));
+    cService.addByIndex(new Customer("Ahmed", 913200296),100);
+   
 
-    System.out.println(htService.find("Shafiq"));
+     
+     System.out.println(cService.find(0).getCustomerMobileNo());
 
+    
   
       
   }
