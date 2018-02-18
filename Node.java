@@ -31,8 +31,7 @@ class Node<T>{
       }
 
     public T getItem(){
-        counter++;
-        System.out.println(counter);
+    
         return item;
       }
 

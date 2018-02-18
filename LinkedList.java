@@ -2,18 +2,11 @@
 
 class LinkedList <T>{
 
-  T item;
+  Object item;
   private Node root;
   private Node node;
 
- 
 
-
-  public LinkedList(){
-
-    //isRootEqualToNull();
-
-  }
   
   public void add(Node node, T item){
 
@@ -23,15 +16,8 @@ class LinkedList <T>{
    
   }
 
-  public void add(Node node){
 
-    this.node = node;
-
-    
-
-  }
-
-  public Object find(Object item){
+  public T find(T item){
 
 
     Node temp = Node.getRoot();
