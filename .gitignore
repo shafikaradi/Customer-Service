@@ -6,3 +6,5 @@ Array.class
 Main.class
 LinkedList.class
 .vscode/settings.json
+HashTable$HashLinkedList$HashNode.class
+HashTable$HashLinkedList.class
