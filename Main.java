@@ -47,7 +47,7 @@
 
     System.out.println("The phone number of "+customerHashTable.find("Shafiq").getCustomerName()+" is "+customerHashTable.find("Shafiq").getCustomerMobileNo()+", data was retrived from HashTable");
 
-   /* LinkedList <Customer> customerLinkedList = new LinkedList<>();
+  LinkedList <Customer> customerLinkedList = new LinkedList<>();
 
     customerLinkedList.add(shafiq);
     customerLinkedList.add(ahmed);
@@ -60,7 +60,7 @@
     customerLinkedList.add(mahmoud);
     customerLinkedList.add(muhammed);
 
-    System.out.println("The phone number of "+customerLinkedList.find(ahmed).getCustomerName()+" is "+customerLinkedList.find(ahmed).getCustomerMobileNo()+", data was retrived from LinkedList");*/  
+    System.out.println("The phone number of "+customerLinkedList.find(ahmed).getCustomerName()+" is "+customerLinkedList.find(ahmed).getCustomerMobileNo()+", data was retrived from LinkedList");  
   }
 
 
