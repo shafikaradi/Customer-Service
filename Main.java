@@ -18,7 +18,7 @@
 
 
 
-    Array<Customer> customerArray = new Array<>();
+   /* Array<Customer> customerArray = new Array<>();
 
     customerArray.add(shafiq);
     customerArray.add(ahmed);
@@ -31,7 +31,7 @@
     customerArray.add(mahmoud);
     customerArray.add(muhammed);
 
-    System.out.println("The phone number of "+customerArray.find(0).getCustomerName()+" is "+customerArray.find(0).getCustomerMobileNo()+", data was retrived from Array");
+    System.out.println("The phone number of "+customerArray.find(0).getCustomerName()+" is "+customerArray.find(0).getCustomerMobileNo()+", data was retrived from Array");*/
     HashTable <String,Customer> customerHashTable = new HashTable<>();
 
     customerHashTable.add("Shafiq", shafiq);
@@ -45,22 +45,22 @@
     customerHashTable.add("Mahmoud",mahmoud);
     customerHashTable.add("Muhammed",muhammed);
 
-    System.out.println("The phone number of "+customerHashTable.find("Ahmed").getCustomerName()+" is "+customerHashTable.find("Ahmed").getCustomerMobileNo()+", data was retrived from HashTable");
+    System.out.println("The phone number of "+customerHashTable.find("Shafiq").getCustomerName()+" is "+customerHashTable.find("Shafiq").getCustomerMobileNo()+", data was retrived from HashTable");
 
-    LinkedList <Customer> customerLinkedList = new LinkedList<>();
+   /* LinkedList <Customer> customerLinkedList = new LinkedList<>();
 
-    customerLinkedList.add(new <Customer> Node(), shafiq);
-    customerLinkedList.add(new <Customer> Node(),ahmed);
-    customerLinkedList.add(new <Customer> Node(),khaled);
-    customerLinkedList.add(new <Customer> Node(),hamza);
-    customerLinkedList.add(new <Customer> Node(),tareq);
-    customerLinkedList.add(new <Customer> Node(),abdulrahman);
-    customerLinkedList.add(new <Customer> Node(),aymen);
-    customerLinkedList.add(new <Customer> Node(),fawzi);
-    customerLinkedList.add(new <Customer> Node(),mahmoud);
-    customerLinkedList.add(new <Customer> Node(),muhammed);
+    customerLinkedList.add(shafiq);
+    customerLinkedList.add(ahmed);
+    customerLinkedList.add(khaled);
+    customerLinkedList.add(hamza);
+    customerLinkedList.add(tareq);
+    customerLinkedList.add(abdulrahman);
+    customerLinkedList.add(aymen);
+    customerLinkedList.add(fawzi);
+    customerLinkedList.add(mahmoud);
+    customerLinkedList.add(muhammed);
 
-    System.out.println("The phone number of "+customerLinkedList.find(aymen).getCustomerName()+" is "+customerLinkedList.find(aymen).getCustomerMobileNo()+", data was retrived from LinkedList");  
+    System.out.println("The phone number of "+customerLinkedList.find(ahmed).getCustomerName()+" is "+customerLinkedList.find(ahmed).getCustomerMobileNo()+", data was retrived from LinkedList");*/  
   }
 
 
