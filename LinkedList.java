@@ -12,11 +12,11 @@ class LinkedList <T>{
   public void add(T item){
 
     node = new Node(item);
-    isHeadNull();
-    isHeadNotNull();
+    isHeadNull(node);
+    isHeadNotNull(node);
   }
 
-   private void isHeadNull(){
+   private void isHeadNull(Node node){
 
       if(head == null){
 
@@ -26,7 +26,7 @@ class LinkedList <T>{
       }
    }
   
-   private void isHeadNotNull(){
+   private void isHeadNotNull(Node node){
      
      if(head != null){
       
