@@ -19,7 +19,7 @@ class HashTable<T,K>{
 
         HashLinkedList list;
 
-       System.out.println(Math.abs(key.hashCode() % hashTableSize));
+       
         if(values[Math.abs(key.hashCode() % hashTableSize)] == null){
 
             list = new HashLinkedList();
@@ -43,22 +43,6 @@ class HashTable<T,K>{
         
         HashLinkedList list = (HashLinkedList) values[Math.abs(key.hashCode() % hashTableSize)];
         return  list.find(key);
-    }
-
-    public boolean doesValueExist(T key){
-
-        if(values[Math.abs(key.hashCode() % hashTableSize)] == null){
-
-
-            return false;
-
-        }else{
-
-
-            return true;
-        }
-
-
     }
 
   
