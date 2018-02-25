@@ -18,7 +18,7 @@
 
 
 
-   /* Array<Customer> customerArray = new Array<>();
+    Array<Customer> customerArray = new Array<>();
 
     customerArray.add(shafiq);
     customerArray.add(ahmed);
@@ -31,7 +31,7 @@
     customerArray.add(mahmoud);
     customerArray.add(muhammed);
 
-    System.out.println("The phone number of "+customerArray.find(0).getCustomerName()+" is "+customerArray.find(0).getCustomerMobileNo()+", data was retrived from Array");*/
+    System.out.println("The phone number of "+customerArray.find(0).getCustomerName()+" is "+customerArray.find(0).getCustomerMobileNo()+", data was retrived from Array");
     HashTable <String,Customer> customerHashTable = new HashTable<>();
 
     customerHashTable.add("Shafiq", shafiq);
@@ -45,7 +45,9 @@
     customerHashTable.add("Mahmoud",mahmoud);
     customerHashTable.add("Muhammed",muhammed);
 
-    System.out.println("The phone number of "+customerHashTable.find("Fawzi").getCustomerName()+" is "+customerHashTable.find("Fawzi").getCustomerMobileNo()+", data was retrived from HashTable");
+    Customer selectedCustomerFromHashTable = customerHashTable.find("Abdulrahman");
+
+    System.out.println("The phone number of "+selectedCustomerFromHashTable.getCustomerName()+" is "+selectedCustomerFromHashTable.getCustomerMobileNo()+", data was retrived from HashTable");
 
   LinkedList <Customer> customerLinkedList = new LinkedList<>();
 
@@ -60,7 +62,8 @@
     customerLinkedList.add(mahmoud);
     customerLinkedList.add(muhammed);
 
-    System.out.println("The phone number of "+customerLinkedList.find(aymen).getCustomerName()+" is "+customerLinkedList.find(aymen).getCustomerMobileNo()+", data was retrived from LinkedList");  
+    Customer selectedCustomerFromLinkedList = customerLinkedList.find(aymen);
+    System.out.println("The phone number of "+selectedCustomerFromLinkedList.getCustomerName()+" is "+selectedCustomerFromLinkedList.getCustomerMobileNo()+", data was retrived from LinkedList");  
   }
 
 

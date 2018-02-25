@@ -1,7 +1,7 @@
 
 class HashTable<T,K>{
 
-    private static final int hashTableSize = 100;
+    private static final int hashTableSize = 10;
     
 
     private Object [] values;
@@ -19,7 +19,6 @@ class HashTable<T,K>{
 
         HashLinkedList list;
 
-       
         if(values[Math.abs(key.hashCode() % hashTableSize)] == null){
 
             list = new HashLinkedList();
@@ -90,16 +89,17 @@ class HashTable<T,K>{
         private K find(T key){
   
           HashNode temp = head;
+         
   
           while(temp != null){
-  
+           
             if(temp.getKey().equals(key)){
   
               return temp.getValue();
   
             }
   
-            temp = temp.next;
+            temp = temp.getNextNode();
   
           }
 
@@ -127,7 +127,7 @@ class HashTable<T,K>{
   
            }
   
-           public HashNode getNext(){
+           public HashNode getNextNode(){
   
             return next;
   
