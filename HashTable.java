@@ -1,7 +1,7 @@
 
 class HashTable<T,K>{
 
-    private static final int hashTableSize = 10;
+    private static final int hashTableSize = 100;
     
 
     private Object [] values;

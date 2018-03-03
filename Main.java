@@ -64,6 +64,8 @@
 
     Customer selectedCustomerFromLinkedList = customerLinkedList.find(aymen);
     System.out.println("The phone number of "+selectedCustomerFromLinkedList.getCustomerName()+" is "+selectedCustomerFromLinkedList.getCustomerMobileNo()+", data was retrived from LinkedList");  
+
+    
   }
 
 
