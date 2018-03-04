@@ -1,7 +1,10 @@
-class BTree<E>{
+import java.lang.reflect.Array;
+
+
+class BTree{
 
   
-   private static final int elements = 3;
+  
    private Node root;
    private int t;
    
@@ -15,112 +18,101 @@ class BTree<E>{
 
     if (root == null)
     {
-        // Allocate memory for root
+      
         root = new Node(t, true);
-        root.keys[0] = key;  // Insert key
-        root.numberOfKeys = 1;  // Update number of keys in root
-    }
-    else // If tree is not empty
-    {
-        // If root is full, then tree grows in height
-        if (root.numberOfKeys == 2*t-1)
-        {
+        root.keys[0] = key;  
+        root.numberOfKeys = 1;  
+    }else{
+     
+        if (root.numberOfKeys == 2*t-1) {
            
             Node s = new Node(t, false);
  
-            // Make old root as child of new root
+         
             s.child[0] = root;
  
-            // Split the old root and move 1 key to the new root
-            s.separateChild(0, root);
+            s.split(0, root);
  
-            // New root has two children now.  Decide which of the
-            // two children is going to have new key
             int i = 0;
-            if (s->keys[0] < k)
+            if (s.keys[0] < key)
                 i++;
-            s.child[i].insertNonFull(k);
+            s.child[i].addNonFull(key);
  
-            // Change root
+     
             root = s;
+        } else {
+          root.addNonFull(key);
         }
-        else  // If root is not full, call insertNonFull for root
-            root->insertNonFull(k);
+      }  
     }
 
-        
+    public Node get(int key){
 
+      if(root == null){
 
-   }
-
-   public Node find(int key){
-
-     if(root != null){
-
-        return root.find(key);
+        return null;
 
       }else{
 
-         return null;
+        return root.get(key);
       }
 
-
-      return root;
-   }
-
+    }
 
     private class Node{
 
        private int [] keys;
        private int t;
-       private Node child [];
+       private Node [] child;
        private int numberOfKeys =  0;
-       boolean isLeaf = true;
+       private boolean isLeaf = true;
 
        public Node(int t, boolean isLeaf){
 
-         keys = new int[elements - 1];
-         child = new Node[elements];
-
+       
           this.t = t;
-          leaf = leaf1;
+          this.isLeaf = isLeaf;
       
           
           keys = new int[2*t-1];
-          child = new Node [2*t];
-      
-
+          child = new Node[2*t];
+    
           numberOfKeys = 0;
 
        }
 
-       public void addKeysToNode(int  key){
-
-    
-
-            for(int i = 0; i < keys.length; i++){
-
-                if(keys.length == 0){
-  
-                  this.keys[0] = keys[0];
-  
-                }else{
-  
-                    this.swapKeys(keys, i);
-                  
-  
-                }
-
-                nonEmptyFields++;
-  
-  
-            }
-
-        
-
-       }
+       
 
        public void addNonFull(int key){
+
+
+        int index = numberOfKeys - 1;
+
+              if (isLeaf == true){
+              
+              while (index >= 0 && keys[index] > key)
+              {
+                  keys[index+1] = keys[index];
+                  index--;
+              }
+      
+              keys[index+1] = key;
+              numberOfKeys = numberOfKeys+1;
+          } else  {
+              
+              while (index >= 0 && keys[index] > key)
+              index--;
+      
+              if (child[index+1].numberOfKeys == 2*t-1) {
+           
+                   split(index+1, child[index+1]);
+      
+                  
+                  if (keys[index+1] < key)
+                      index++;
+              }
+              child[index+1].addNonFull(key);
+          }
 
        }
 
@@ -139,7 +131,7 @@ class BTree<E>{
         {
             for (int i = 0; i < t; i++){
 
-              newNode.child[j] = node.child[i+t];
+              newNode.child[i] = node.child[i+t];
 
             }
               
@@ -147,45 +139,44 @@ class BTree<E>{
 
          node.numberOfKeys = t - 1;
 
-         for (int i = n; i >= index+1; i--){
-          child[i+1] = child[j];
+         for (int i = numberOfKeys; i >= index+1; i--){
+          child[i+1] = child[i];
          }
            
  
    
           child[index+1] = newNode;
       
-          // A key of y will move to this node. Find location of
-          // new key and move all greater keys one space ahead
-          for (int i = numberOfKeys-1; i >= i; i--){
-            keys[i+1] = keys[i];
+
+          for (int i = numberOfKeys - 1; i >= index; i--){
+             keys[i+1] = keys[i];
           }
              
       
-          // Copy the middle key of y to this node
+
           keys[index] = node.keys[t-1];
       
-          // Increment count of keys in this node
+     
           numberOfKeys++;
 
        }
 
        public Node get(int key){
 
-          int i = 0;
+          int index = 0;
 
-          while (i < numberOfKeys && key > keys[i])
+          while (index < numberOfKeys && key > keys[index])
 
-            i++;
+          index++;
     
-          if (keys[i] == key)
+          if (keys[index] == key)
             return this;
     
-          if (leaf == true)
+          if (isLeaf == true)
             return null;
     
         
-           return child[i].search(key);
+           return child[index].get(key);
 
        }
 

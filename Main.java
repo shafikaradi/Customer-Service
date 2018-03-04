@@ -3,7 +3,7 @@
 
  public static void main(String[] args) {
 
-      Customer shafiq = new Customer("Shafiq", 916416709);
+     /*  Customer shafiq = new Customer("Shafiq", 916416709);
       Customer ahmed = new Customer("Ahmed", 913200296);
       Customer khaled = new Customer("Khaled",945521203);
       Customer hamza = new Customer("Hamza",92328299);
@@ -63,9 +63,23 @@
     customerLinkedList.add(muhammed);
 
     Customer selectedCustomerFromLinkedList = customerLinkedList.find(aymen);
-    System.out.println("The phone number of "+selectedCustomerFromLinkedList.getCustomerName()+" is "+selectedCustomerFromLinkedList.getCustomerMobileNo()+", data was retrived from LinkedList");  
+    System.out.println("The phone number of "+selectedCustomerFromLinkedList.getCustomerName()+" is "+selectedCustomerFromLinkedList.getCustomerMobileNo()+", data was retrived from LinkedList");  */ 
 
-    
+    BTree customerTree = new BTree(3);
+    customerTree.add(4);
+    customerTree.add(5);
+    customerTree.add(20);
+    customerTree.add(43); 
+    customerTree.add(23);
+    customerTree.add(1);
+    customerTree.add(3);
+    customerTree.add(34);
+    customerTree.add(9);
+    customerTree.add(19);
+
+    String result  = customerTree.get(1) != null ? "was found" : "not found";
+
+    System.out.println(result);
   }
 
 
