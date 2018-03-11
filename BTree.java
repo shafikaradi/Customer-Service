@@ -16,12 +16,12 @@ class BTree{
 
    public void add(int key){
 
-    if (root == null)
-    {
+    if (root == null){
       
         root = new Node(t, true);
         root.keys[0] = key;  
-        root.numberOfKeys = 1;  
+        root.numberOfKeys = 1; 
+
     }else{
      
         if (root.numberOfKeys == 2*t-1) {
@@ -40,7 +40,7 @@ class BTree{
  
      
             root = s;
-        } else {
+        }else{
           root.addNonFull(key);
         }
       }  
