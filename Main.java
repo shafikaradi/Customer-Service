@@ -24,6 +24,10 @@ import java.util.Random;
         mainObject.fillBTree();
         mainObject.fillLinkedList();*/
 
+        for(int i = 1; i <= 10; i++){
+          mainObject.fillArray();
+        }
+
     
   }
 
@@ -93,7 +97,7 @@ import java.util.Random;
     };*/
 
 
-      for(int i =0 ; i < 10000; i++){
+      for(int i =0 ; i < 1000; i++){
  
         Runnable runnable10 =  () -> {
 

@@ -1,7 +1,7 @@
 
 class Array<T>{
 
-    private static final int fixedArraySize = 10000;
+    private static final int fixedArraySize = 1000;
     private int instanceIndex = 0;
 
     private Object [] items;
@@ -16,7 +16,7 @@ class Array<T>{
 
     public void add(T item){
 
-        if(instanceIndex <= 9999){
+        if(instanceIndex <= 999){
 
             items[instanceIndex] = item;
              instanceIndex = instanceIndex + 1;
@@ -32,7 +32,7 @@ class Array<T>{
 
    public  void addByIndex(T item, int index){
 
-        if(index <= 9999){
+        if(index <= 999){
 
             items[index] = item;
     
