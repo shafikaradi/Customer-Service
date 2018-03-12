@@ -20,9 +20,9 @@ import java.util.Random;
 
         Main mainObject = new Main();
         mainObject.fillArray();
-        mainObject.fillHashTable();
+        /*mainObject.fillHashTable();
         mainObject.fillBTree();
-        mainObject.fillLinkedList();
+        mainObject.fillLinkedList();*/
 
     
   }
@@ -96,6 +96,17 @@ import java.util.Random;
       System.out.println("The phone number of "+customerArray.find(2).getCustomerName()+" is "+customerArray.find(2).getCustomerMobileNo()+", data was retrived from Array");
     };
 
+    try{
+      Thread.sleep(100);
+    }catch(Exception e){
+    }finally{
+
+    }
+  
+    Runnable runPrint5 = () -> {
+      System.out.println("Number of items of Array is "+customerArray.count());
+    };
+
         new Thread(runnable1).start();
         new Thread(runnable2).start();
         new Thread(runnable3).start();
@@ -107,6 +118,7 @@ import java.util.Random;
         new Thread(runnable9).start();
         new Thread(runnable10).start();
         new Thread(runPrint1).start();
+        new Thread(runPrint5).start();
 
   }
  
