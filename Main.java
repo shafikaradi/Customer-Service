@@ -93,8 +93,7 @@ import java.util.Random;
     };
 
 
-      System.out.println("The phone number of "+customerArray.find(2).getCustomerName()+" is "+customerArray.find(2).getCustomerMobileNo()+", data was retrived from Array");
-      System.out.println("Number of items of Array is "+customerArray.count());
+      
     
 
    
@@ -119,6 +118,8 @@ import java.util.Random;
     
         }
 
+      System.out.println("The phone number of "+customerArray.find(2).getCustomerName()+" is "+customerArray.find(2).getCustomerMobileNo()+", data was retrived from Array");
+      System.out.println("Number of items of Array is "+customerArray.count());
   }
  
   
