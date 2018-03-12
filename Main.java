@@ -31,7 +31,7 @@ import java.util.Random;
     Array<Customer> customerArray = new Array<>();
       
 
-    Runnable runnable1 = () -> {
+ /*   Runnable runnable1 = () -> {
 
       customerArray.add(shafiq);
         
@@ -90,15 +90,24 @@ import java.util.Random;
           
       customerArray.add(muhammed);
         
-    };
+    };*/
 
 
-      
+      for(int i =0 ; i <= 1000; i++){
+ 
+        Runnable runnable10 =  () -> {
+
+          
+          customerArray.add(muhammed);
+            
+        };
+        new Thread(runnable10).start();
+      }
     
 
    
 
-        new Thread(runnable1).start();
+       /* new Thread(runnable1).start();
         new Thread(runnable2).start();
         new Thread(runnable3).start();
         new Thread(runnable4).start();
@@ -106,8 +115,8 @@ import java.util.Random;
         new Thread(runnable6).start();
         new Thread(runnable7).start();
         new Thread(runnable8).start();
-        new Thread(runnable9).start();
-        new Thread(runnable10).start();
+        new Thread(runnable9).start();*/
+     
   
 
 
@@ -118,7 +127,7 @@ import java.util.Random;
     
         }
 
-      System.out.println("The phone number of "+customerArray.find(2).getCustomerName()+" is "+customerArray.find(2).getCustomerMobileNo()+", data was retrived from Array");
+      System.out.println("The phone number of "+customerArray.find(9).getCustomerName()+" is "+customerArray.find(9).getCustomerMobileNo()+", data was retrived from Array");
       System.out.println("Number of items of Array is "+customerArray.count());
   }
  
