@@ -58,16 +58,7 @@ class Array<T>{
 
     public int count(){
  
-        int counter = 0;
-        for(int i =0; i < items.length; i++){
-          
-            if(items[i] != null){
-
-                counter++;
-            }
-
-        }
-       return counter;
+       return instanceIndex;
     }
 
 
