@@ -24,10 +24,17 @@ class Array<T>{
          }else{
  
              System.out.println("Out of range");
- 
+          
          }
 
+   
 
+      try{
+        Thread.sleep(50);
+      }catch(Exception e){
+      }finally{
+  
+      }
     }
 
    public  void addByIndex(T item, int index){
