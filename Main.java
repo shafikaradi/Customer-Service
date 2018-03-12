@@ -92,20 +92,12 @@ import java.util.Random;
         
     };
 
-    Runnable runPrint1 = () -> {
+
       System.out.println("The phone number of "+customerArray.find(2).getCustomerName()+" is "+customerArray.find(2).getCustomerMobileNo()+", data was retrived from Array");
-    };
-
-    try{
-      Thread.sleep(100);
-    }catch(Exception e){
-    }finally{
-
-    }
-  
-    Runnable runPrint5 = () -> {
       System.out.println("Number of items of Array is "+customerArray.count());
-    };
+    
+
+   
 
         new Thread(runnable1).start();
         new Thread(runnable2).start();
@@ -117,8 +109,15 @@ import java.util.Random;
         new Thread(runnable8).start();
         new Thread(runnable9).start();
         new Thread(runnable10).start();
-        new Thread(runPrint1).start();
-        new Thread(runPrint5).start();
+  
+
+
+        try{
+          Thread.sleep(1000);
+        }catch(Exception e){
+        }finally{
+    
+        }
 
   }
  
