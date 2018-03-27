@@ -1,21 +1,31 @@
-
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 class Array<T>{
 
     private static final int fixedArraySize = 1000;
     private int instanceIndex = 0;
 
     private Object [] items;
+    private Lock lock = new ReentrantLock();
 
     
 
     public Array(){
 
         items = new Object[fixedArraySize];
+        
 
     }
 
     public void add(T item){
 
+        try{
+            Thread.sleep(50);
+          }catch(Exception e){
+          }finally{
+      
+          }
+          lock.lock();   
         if(instanceIndex <= 999){
 
             items[instanceIndex] = item;
@@ -28,13 +38,8 @@ class Array<T>{
          }
 
    
-
-      try{
-        Thread.sleep(50);
-      }catch(Exception e){
-      }finally{
-  
-      }
+         lock.unlock();
+     
     }
 
    public  void addByIndex(T item, int index){
