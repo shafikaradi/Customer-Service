@@ -19,13 +19,11 @@ import java.util.Random;
 
 
         Main mainObject = new Main();
-        mainObject.fillArray();
-        /*mainObject.fillHashTable();
-        mainObject.fillBTree();
-        mainObject.fillLinkedList();*/
+        
+       
 
         for(int i = 1; i <= 10; i++){
-          mainObject.fillArray();
+          mainObject.fillHashTable();
         }
 
     
@@ -35,66 +33,6 @@ import java.util.Random;
     Array<Customer> customerArray = new Array<>();
       
 
- /*   Runnable runnable1 = () -> {
-
-      customerArray.add(shafiq);
-        
-    };
-
-    Runnable runnable2 = () -> {
- 
-      customerArray.add(ahmed);
-        
-    };
-
-    Runnable runnable3 = () -> {
-
-      customerArray.add(khaled);
-    
-    };
-
-    Runnable runnable4 = () -> {
-     
-      customerArray.add(hamza);
-                  
-    };
-
-    Runnable runnable5 = () -> {
-    
-      customerArray.add(tareq);
-        
-    };
-
-    Runnable runnable6 = () -> {
-    
-      customerArray.add(abdulrahman);
-        
-    };
-
-    Runnable runnable7 = () -> {
-      customerArray.add(aymen);
-    };
-
-    Runnable runnable8 = () -> {
-
-      customerArray.add(fawzi);
-        
-    };
-
-    Runnable runnable9= () -> {
-
-          
-      customerArray.add(mahmoud);
-      
-        
-    };
-
-    Runnable runnable10 =  () -> {
-
-          
-      customerArray.add(muhammed);
-        
-    };*/
 
 
       for(int i =0 ; i < 1000; i++){
@@ -111,17 +49,6 @@ import java.util.Random;
     
 
    
-
-       /* new Thread(runnable1).start();
-        new Thread(runnable2).start();
-        new Thread(runnable3).start();
-        new Thread(runnable4).start();
-        new Thread(runnable5).start();
-        new Thread(runnable6).start();
-        new Thread(runnable7).start();
-        new Thread(runnable8).start();
-        new Thread(runnable9).start();*/
-     
   
 
 
@@ -141,126 +68,73 @@ import java.util.Random;
   public void fillHashTable(){
 
     HashTable <String,Customer> customerHashTable = new HashTable<>();
-    Runnable runable11 = () -> {
-    customerHashTable.add("Shafiq", shafiq);
-    };
+ 
 
-    Runnable runable12 = () -> {
-    customerHashTable.add("Ahmed",ahmed);
-    };
+    for(int i =0 ; i < 100; i++){
+ 
+      Runnable runnable11 =  () -> {
 
-    Runnable runable13 = () -> {
-    customerHashTable.add("Khaled",khaled);
-    };
+        
+          customerHashTable.add("Shafiq", shafiq);
+          try{
+            wait();
+          }catch(Exception e){
 
-    Runnable runable14 = () -> {
-    customerHashTable.add("Hamza",hamza);
-    };
+          }
+          
+      };
 
-    Runnable runable15 = () -> {
-    customerHashTable.add("Tareq",tareq);
-    };
+      
+      
+      new Thread(runnable11).start();
+    }
 
-    Runnable runable16 = () -> {
-    customerHashTable.add("Abdulrahman",abdulrahman);
-    };
-    Runnable runable17 = () -> {
-    customerHashTable.add("Aymen",aymen);
-    };
-
-    Runnable runable18 = () -> {
-    customerHashTable.add("Fawzi",fawzi);
-    };
-
-    Runnable runable19 = () -> {
-    customerHashTable.add("Mahmoud",mahmoud);
-    };
-    Runnable runable20 = () -> {
-    customerHashTable.add("Muhammed",muhammed);
-    };
-
-    Runnable runPrint2 = () -> {
-      Customer selectedCustomerFromHashTable = customerHashTable.find("Abdulrahman");
-      System.out.println("The phone number of "+selectedCustomerFromHashTable.getCustomerName()+" is "+selectedCustomerFromHashTable.getCustomerMobileNo()+", data was retrived from HashTable");
-    };
-
+      Customer selectedCustomerFromHashTable = customerHashTable.find("Shafiq");
 
     
-    new Thread(runable11).start();
-    new Thread(runable12).start();
-    new Thread(runable13).start();
-    new Thread(runable14).start();
-    new Thread(runable15).start();
-    new Thread(runable16).start();
-    new Thread(runable17).start();
-    new Thread(runable18).start();
-    new Thread(runable19).start();
-    new Thread(runable20).start();
-    new Thread(runPrint2).start();
+
+    
+
+   
+    try{
+      Thread.sleep(1000);
+      System.out.println("The phone number of "+selectedCustomerFromHashTable.getCustomerName()+" is "+selectedCustomerFromHashTable.getCustomerMobileNo()+", data was retrived from HashTable");
+      System.out.println("Number of items of HashTable is "+customerHashTable.count());
+    }catch(Exception e){
+    }finally{
+
+    }
 
   }
 
   public void fillLinkedList(){
 
     LinkedList <Customer> customerLinkedList = new LinkedList<>();
-    Runnable runable21 = () -> {
-    customerLinkedList.add(shafiq);
-    };
-     
+  
 
-    Runnable runable22 = () -> {
-    customerLinkedList.add(ahmed);
-    };
+    for(int i =0 ; i < 100; i++){
+ 
+      Runnable runnable21 =  () -> {
 
+        
+        customerLinkedList.add(muhammed);
+          
+      };
+      
+      new Thread(runnable21).start();
+    }
 
-    Runnable runable23 = () -> {
-    customerLinkedList.add(khaled);
-    };
+    try{
+      Thread.sleep(1000);
+    }catch(Exception e){
+    }finally{
 
-    Runnable runable24 = () -> {
-    customerLinkedList.add(hamza);
-    };
+    }
 
-    Runnable runable25 = () -> {
-    customerLinkedList.add(tareq);
-    };
-
-    Runnable runable26 = () -> {
-    customerLinkedList.add(abdulrahman);
-    };
-
-    Runnable runable27 = () -> {
-    customerLinkedList.add(aymen);
-    };
-
-    Runnable runable28 = () -> {
-    customerLinkedList.add(fawzi);
-    };
-
-    Runnable runable29 = () -> {
-    customerLinkedList.add(mahmoud);
-    };
-
-    Runnable runable30 = () -> {
-    customerLinkedList.add(muhammed);
-    };
-
-    Runnable runPrint3 = () -> {
-    Customer selectedCustomerFromLinkedList = customerLinkedList.find(aymen);
-    System.out.println("The phone number of "+selectedCustomerFromLinkedList.getCustomerName()+" is "+selectedCustomerFromLinkedList.getCustomerMobileNo()+", data was retrived from LinkedList"); 
-    };
-
-    new Thread(runable21).start();
-    new Thread(runable22).start();
-    new Thread(runable23).start();
-    new Thread(runable24).start();
-    new Thread(runable25).start();
-    new Thread(runable26).start();
-    new Thread(runable27).start();
-    new Thread(runable28).start();
-    new Thread(runable29).start();
-    new Thread(runable30).start();
-    new Thread(runPrint3).start();
+   Customer temp =  customerLinkedList.find(muhammed);
+   System.out.println("The phone number of "+temp.getCustomerName()+" is "+temp.getCustomerMobileNo()+", data was retrived from LinkedList");
+   System.out.println("Number of items of LinkedList is "+customerLinkedList.count());
+  
   }
 
 

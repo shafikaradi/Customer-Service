@@ -1,12 +1,11 @@
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+
 class Array<T>{
 
     private static final int fixedArraySize = 1000;
     private int instanceIndex = 0;
 
     private Object [] items;
-    private Lock lock = new ReentrantLock();
+  
 
     
 
@@ -17,7 +16,7 @@ class Array<T>{
 
     }
 
-    public void add(T item){
+    public  void add(T item){
 
         try{
             Thread.sleep(50);
@@ -25,7 +24,7 @@ class Array<T>{
           }finally{
       
           }
-          lock.lock();   
+          synchronized(this){
         if(instanceIndex <= 999){
 
             items[instanceIndex] = item;
@@ -36,9 +35,9 @@ class Array<T>{
              System.out.println("Out of range");
           
          }
-
+        }
    
-         lock.unlock();
+         
      
     }
 

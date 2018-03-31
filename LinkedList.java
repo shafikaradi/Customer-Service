@@ -1,4 +1,5 @@
-
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class LinkedList <T>{
 
@@ -6,14 +7,24 @@ class LinkedList <T>{
   private Node head;
   private Node tail;
   private Node node;
+  private int counter = 0;
+  private Lock lock = new ReentrantLock();
 
 
   
   public void add(T item){
 
-    node = new Node(item);
-    isHeadNull(node);
-    isHeadNotNull(node);
+ 
+   lock.lock();
+ 
+      node = new Node(item);
+      counter++;
+      isHeadNull(node);
+      isHeadNotNull(node);
+    
+
+    lock.unlock();
+    
   }
 
    private void isHeadNull(Node node){
@@ -56,6 +67,10 @@ class LinkedList <T>{
    return null;
     
 
+  }
+
+  public int count(){
+    return this.counter;
   }
 
    class Node{

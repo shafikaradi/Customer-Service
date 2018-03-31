@@ -2,8 +2,7 @@
 class HashTable<T,K>{
 
     private static final int hashTableSize = 100;
-    
-
+    private int counter = 0;
     private Object [] values;
 
 
@@ -17,13 +16,21 @@ class HashTable<T,K>{
 
     public void add(T key, K value){
 
-        HashLinkedList list;
+        
 
-        if(values[Math.abs(key.hashCode() % hashTableSize)] == null){
+        HashLinkedList list;
+        var index = Math.abs(key.hashCode() % hashTableSize);
+        counter++;
+      
+
+        synchronized(this){
+
+        
+        if(values[index] == null){
 
             list = new HashLinkedList();
             list.add(key, value);
-            values[Math.abs(key.hashCode() % hashTableSize)] = list;
+            values[index] = list;
 
         }else{
 
@@ -31,7 +38,7 @@ class HashTable<T,K>{
             list.add(key, value);
 
         }
-
+    }
         list = null;
         
     }
@@ -42,6 +49,11 @@ class HashTable<T,K>{
         
         HashLinkedList list = (HashLinkedList) values[Math.abs(key.hashCode() % hashTableSize)];
         return  list.find(key);
+    }
+
+
+    public int count(){
+        return this.counter;
     }
 
   
@@ -58,7 +70,7 @@ class HashTable<T,K>{
      
   
         public void add(T key, K value){
-
+           
             node = new HashNode(key, value);
             isHeadNull(node);
             isHeadNotNull(node);
